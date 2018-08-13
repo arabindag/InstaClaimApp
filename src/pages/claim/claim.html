@@ -1,0 +1,89 @@
+<!--
+  Generated template for the ClaimPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>claim</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="claimForm">
+
+        <ion-item>
+          <ion-label>Involved vehicle</ion-label>
+          <ion-select [formControl]="claimForm.controls['vehicle']" [(ngModel)]="claimdata.model">
+            <!-- [(ngModel)]="claim.vehicle"-->
+            <ion-option *ngFor="let vehicle of vehicleOptions" value="{{vehicle}}">{{vehicle}}</ion-option>
+          </ion-select>
+          
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Loss date</ion-label>
+          <ion-datetime displayFormat="MMM DD YYYY h:mm A" [formControl]="claimForm.controls['lossdate']" ></ion-datetime>
+          <!--[(ngModel)]="claim.lossdate"-->
+        </ion-item>
+    
+    
+        <ion-item>
+          <ion-label>Loss cause</ion-label>
+          <ion-select [formControl]="claimForm.controls['losscause']">
+            <!--[(ngModel)]="claim.losscause"-->
+            <ion-option *ngFor="let cause of causeOptions" value="{{cause}}">{{cause}}</ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Sub loss cause</ion-label>
+          <ion-select [formControl]="claimForm.controls['sublosscause']">
+            <!--[(ngModel)]="claim.sublosscause"-->
+            <ion-option *ngFor="let subcause of subCauseOptions" value="{{subcause}}">{{subcause}}</ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item >
+          <ion-label floating>Number of people injured</ion-label>
+          <ion-input type="number" [formControl]="claimForm.controls['numberofpeopleinjured']"></ion-input>
+          <!--[(ngModel)]="claim.numberofpeopleinjured"-->
+        </ion-item>
+        
+ <ion-item >
+          <ion-list>
+            <ion-item>
+              <ion-avatar item-start>
+                <img [src]="claimdata.imagepath[0]" id="leftimg">               
+              </ion-avatar>
+              <p> {{claimdata.imagepath[0]}}</p>
+              <button ion-button round (click)="openCamera('leftimg')" small width-25>Take Photo Left Side</button>
+            </ion-item>
+            <ion-item>
+              <ion-avatar item-start>
+                <img  [src]="claimdata.imagepath[1]"   id="rightimg">
+              </ion-avatar>
+              <button ion-button round (click)="openCamera('rightimg')"  small width-25>Take Photo Right Side</button>
+            </ion-item>
+            <ion-item>
+              <ion-avatar item-start>
+                <img  [src]="claimdata.imagepath[2]"  id="frontimg">
+              </ion-avatar>
+              <button ion-button round (click)="openCamera('frontimg')" small width-25>Take Photo Front Side</button>
+            </ion-item>
+            <ion-item>
+              <ion-avatar item-start>
+                <img  [src]="claimdata.imagepath[3]"  id="backimg">
+              </ion-avatar>
+              <button ion-button round (click)="openCamera('backimg')" small width-25>Take Photo Back Side</button>
+            </ion-item>
+          </ion-list>
+        </ion-item> 
+        <button ion-button block [disabled]="!claimForm.valid" (click)=submitNext()>Next</button>
+      </form>  
+</ion-content>
