@@ -78,12 +78,12 @@ export class ClaimPage {
  
   openCamera(ctrl:string){
     const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      quality: 80,
+      destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       cameraDirection: this.camera.Direction.BACK,
-      saveToPhotoAlbum: true,
+      saveToPhotoAlbum: true
     }
     
     this.camera.getPicture(options).then((imageData) => {
