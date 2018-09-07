@@ -1,0 +1,7 @@
+{
+  "name": "instaclaim",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
