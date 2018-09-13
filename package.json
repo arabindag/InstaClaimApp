@@ -37,6 +37,7 @@
         "cordova-plugin-geolocation": "^4.0.1",
         "cordova-plugin-ionic-keyboard": "^2.1.2",
         "cordova-plugin-ionic-webview": "^2.1.0",
+        "cordova-plugin-nativegeocoder": "~3.1.2",
         "cordova-plugin-network-information": "^2.0.1",
         "cordova-plugin-splashscreen": "^5.0.2",
         "cordova-plugin-statusbar": "^2.4.2",
@@ -51,6 +52,7 @@
     },
     "devDependencies": {
         "@ionic/app-scripts": "3.1.11",
+        "@ionic/lab": "1.0.9",
         "typescript": "~2.6.2"
     },
     "description": "An Ionic project",
@@ -62,12 +64,12 @@
             "cordova-plugin-ionic-webview": {},
             "cordova-plugin-ionic-keyboard": {},
             "cordova-plugin-camera": {},
-            "cordova-plugin-geolocation": {
-                "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
-            },
             "cordova-plugin-nativegeocoder": {},
             "cordova-plugin-statusbar": {},
-            "cordova-plugin-network-information": {}
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-geolocation": {
+                "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+            }
         },
         "platforms": [
             "android",
